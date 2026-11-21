@@ -7,7 +7,7 @@ export interface IPelicula {
     puntaje: number;
     año?: number;
     reseña?: string;
-    usuario: Types.ObjectId;
+    usuario: Types.ObjectId | string;
 }
 
 const peliculaSchema = new Schema<IPelicula>(
@@ -18,7 +18,7 @@ const peliculaSchema = new Schema<IPelicula>(
     puntaje: { type: Number, required: true },
     año: { type: Number },
     reseña: { type: String },
-    usuario: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    usuario: { type: Schema.Types.ObjectId, ref: "Usuario", required: true },
     },
     { timestamps: true }
 );

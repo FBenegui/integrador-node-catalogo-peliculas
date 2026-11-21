@@ -1,6 +1,6 @@
+import dotenv from "dotenv";
 import express from "express";
 import type { Request, Response } from "express";
-import dotenv from "dotenv";
 import { connectDB } from "./db";
 import rutasPelicula from "./componentes/pelicula/routes";
 import rutasUsuario from "./componentes/usuario/routes";
