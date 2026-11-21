@@ -34,8 +34,8 @@ export const registrar = async (datos: IUsuario) => {
     };
 };
 
-export const login = async (identificador: string, password: string) => {
-    if (!identificador || !password) {
+export const login = async (identificador: string, contraseña: string) => {
+    if (!identificador || !contraseña) {
         throw new Error("Debes ingresar tu email o nombre de usuario y tu contraseña");
     }
     
@@ -44,7 +44,7 @@ export const login = async (identificador: string, password: string) => {
     throw new Error("Credenciales inválidas");
 }
 
-    const contraseñaValida = await bcrypt.compare(password, usuario.contraseña);
+    const contraseñaValida = await bcrypt.compare(contraseña, usuario.contraseña);
     if (!contraseñaValida) {
         throw new Error("Credenciales inválidas");
     }
